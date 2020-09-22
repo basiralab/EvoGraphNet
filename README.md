@@ -1,5 +1,5 @@
 # EvoGraphNet
-EvoGraphNet for joint prediction of brain connection evolution, coded up in Python by Uğur Ali Kaplan and Ahmed Nebli.  
+EvoGraphNet for joint prediction of brain connection evolution, coded up in Python by Uğur Ali Kaplan (uguralikaplan@gmail.com) and Ahmed Nebli (mr.ahmednebli@gmail.com).  
 
 This repository provides the official PyTorch implementation of the following paper:
 
