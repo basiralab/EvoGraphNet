@@ -40,8 +40,6 @@ else:
 
 # Parser
 parser = argparse.ArgumentParser()
-parser.add_argument('--h', type=str, default='lh', help='Left or right hemisphere',
-                    choices=['lh', 'rh'])
 parser.add_argument('--lr_g', type=float, default=0.01, help='Generator learning rate')
 parser.add_argument('--lr_d', type=float, default=0.0002, help='Discriminator learning rate')
 parser.add_argument('--loss', type=str, default='BCE', help='Which loss to use for training',
@@ -62,7 +60,7 @@ opt = parser.parse_args()
 
 # Datasets
 
-h_data = MRDataset2("../data", opt.h.lower(), subs=989)
+h_data = MRDataset2("../data", "lh", subs=989)
 
 # Parameters
 
