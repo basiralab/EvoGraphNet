@@ -70,9 +70,9 @@ You can run the following command to see the default values and reminders for pa
 ```bash
 python EvoGraphNet.py --help
 
-<h2>Example Results</h2>
+Example Results:
 
-When given the brain connections data at $t_0$, EvoGraphNet.py will produce two matrices showing brain connections at $t_1$ and $t_2$. In this example, our matrices are $35\times 35$.
+When given the brain connections data at t0, EvoGraphNet.py will produce two matrices showing brain connections at t1 and t2. In this example, our matrices are 35 x 35.
 
 ```
 ![Visualization](Visualization.png)
