@@ -74,8 +74,8 @@ python EvoGraphNet.py --help
 
 When given the brain connections data at $t_0$, EvoGraphNet.py will produce two matrices showing brain connections at $t_1$ and $t_2$. In this example, our matrices are $35\times 35$.
 
-![Visualization](Visualization.png)
 ```
+![Visualization](Visualization.png)
 
 # YouTube videos to install and run the code and understand how EvoGraphNet works
 
