@@ -71,6 +71,14 @@ You can run the following command to see the default values and reminders for pa
 python EvoGraphNet.py --help
 ```
 
+# YouTube videos to install and run the code and understand how EvoGraphNet works
+
+To install and run EvoGraphNet, check the following YouTube video:
+https://youtu.be/eTUeQ15FeRc
+
+To learn about how EvoGraphNet works, check the following YouTube video:
+https://youtu.be/aT---t2OBO0
+
 # Please cite the following paper when using EvoGraphNet:
 
 ```latex
