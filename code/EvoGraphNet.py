@@ -376,8 +376,8 @@ for fold in range(folds):
 
         print(f'Epoch [{epoch + 1}/{num_epochs}]')
         print(f'[Train]: D Loss: {d / total_step:.5f}, G Loss: {g / total_step:.5f} R Loss: {r / total_step:.5f}, F Loss: {f / total_step:.5f}, MSE: {mse_l / total_step:.5f}, MAE: {mae_l / total_step:.5f}')
-        print(f'[Val]: D Loss: {d_val / total_step:.5f}, G Loss: {g_val / total_step:.5f} R Loss: {r_val / total_step:.5f}, F Loss: {f_val / total_step:.5f}, MSE: {mse_l_val / total_step:.5f}, MAE: {mae_l_val / total_step:.5f}')
-        print(f'[Train]: D2 Loss: {d2 / val_step:.5f}, G2 Loss: {g2 / val_step:.5f} R2 Loss: {r2 / val_step:.5f}, F2 Loss: {f2 / val_step:.5f}, MSE: {mse_l2 / val_step:.5f}, MAE: {mae_l2 / val_step:.5f}')
+        print(f'[Val]: D Loss: {d_val / val_step:.5f}, G Loss: {g_val / val_step:.5f} R Loss: {r_val / val_step:.5f}, F Loss: {f_val / val_step:.5f}, MSE: {mse_l_val / val_step:.5f}, MAE: {mae_l_val / val_step:.5f}')
+        print(f'[Train]: D2 Loss: {d2 / total_step:.5f}, G2 Loss: {g2 / total_step:.5f} R2 Loss: {r2 / total_step:.5f}, F2 Loss: {f2 / total_step:.5f}, MSE: {mse_l2 / total_step:.5f}, MAE: {mae_l2 / total_step:.5f}')
         print(f'[Val]: D2 Loss: {d_val2 / val_step:.5f}, G2 Loss: {g_val2 / val_step:.5f} R2 Loss: {r_val2 / val_step:.5f}, F2 Loss: {f_val2 / val_step:.5f}, MSE: {mse_l_val2 / val_step:.5f}, MAE: {mae_l_val2 / val_step:.5f}')
 
         real_losses.append(r / total_step)
