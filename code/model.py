@@ -44,7 +44,9 @@ class Generator(nn.Module):
 
         x1 = torch.sigmoid(self.conv11(self.conv1(x, edge_index, edge_attr)))
         x1 = F.dropout(x1, training=self.training)
-
+        #Below 2 lines are the corrections
+        x1 = (x1 + x1.T) / 2.0
+        x1.fill_diagonal_(fill_value = 0)
         x2 = torch.sigmoid(self.conv22(self.conv2(x1, edge_index, edge_attr)))
         x2 = F.dropout(x2, training=self.training)
 
@@ -53,6 +55,9 @@ class Generator(nn.Module):
         x5 = x3[:, 35:70]
 
         x6 = (x4 + x5) / 2
+        #Below 2 lines are the corrections
+        x6 = (x6 + x6.T) / 2.0
+        x6.fill_diagonal_(fill_value = 0)
         return x6
 
 
