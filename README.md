@@ -96,5 +96,9 @@ organization={Springer}
 }
 ```
 
+# EvoGraphNet on arXiv 
+
+Link: https://arxiv.org/abs/2009.13217
+
 # License
 Our code is released under MIT License (see LICENSE file for details).
