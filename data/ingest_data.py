@@ -82,12 +82,7 @@ display(df_last_segment)
 
 # COMMAND ----------
 
-# Split by '.' and get the size of the resulting array
-df_with_size = df_with_filename.withColumn("split_array", split("description", "\.")).withColumn("array_size", size("split_array"))
-
-# Extract the last segment using `element_at`
-df_last_segment = df_with_size.withColumn("annotations", element_at("split_array", df_with_size["array_size"].cast("int")))
-display(df_last_segment)
+cccccbkbrbrbeb
 
 # COMMAND ----------
 
