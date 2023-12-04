@@ -111,7 +111,7 @@ opt = easydict.EasyDict({
 
 # Datasets
 
-h_data = MRDataset2("/dbfs/ml/blogs/gan/dpm_xl/evographnet/data/", "lh", subs=989)
+h_data = MRDataset2("/dbfs/ml/blogs/gan/dpm_xl/evographnet/data-extended/", "lh", subs=989)
 
 # COMMAND ----------
 

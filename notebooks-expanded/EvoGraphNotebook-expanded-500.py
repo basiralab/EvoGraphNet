@@ -93,9 +93,9 @@ opt = easydict.EasyDict({
   'lr_d' : 0.0002,
   'loss' : 'BCE',
   'batch' : 1,
-  # 'epoch' : 500,
+  'epoch' : 500,
+  # 'epoch' : 100,
   # 'epoch' : 10,
-  'epoch' : 100,
   'folds' : 3,
   'tr_st' : 'same',
   'id_e' : 2,
@@ -111,7 +111,7 @@ opt = easydict.EasyDict({
 
 # Datasets
 
-h_data = MRDataset2("/dbfs/ml/blogs/gan/dpm_xl/evographnet/data/", "lh", subs=989)
+h_data = MRDataset2("/dbfs/ml/blogs/gan/dpm_xl/evographnet/data-extended/", "lh", subs=989)
 
 # COMMAND ----------
 
@@ -554,7 +554,7 @@ for fold in range(folds):
         torch.save(generator2.state_dict(),
                    "/dbfs/ml/blogs/gan/dpm_xl/evographnet/weights/generator2_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
         torch.save(discriminator2.state_dict(),
-                   "/dbfs/ml/blogs/gan/dpm_xl/evographnet/weights/discriminator2_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
+                   "/dbfs/ml/blogs/gan/dpm_xl/evographnet//weights/discriminator2_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
 
     del generator
     del discriminator

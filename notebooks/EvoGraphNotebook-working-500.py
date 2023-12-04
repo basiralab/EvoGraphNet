@@ -111,7 +111,7 @@ opt = easydict.EasyDict({
 
 # Datasets
 
-h_data = MRDataset2("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/data", "lh", subs=989)
+h_data = MRDataset2("/dbfs/ml/blogs/gan/dpm_xl/evographnet/data/", "lh", subs=989)
 
 # COMMAND ----------
 
@@ -549,12 +549,12 @@ for fold in range(folds):
         gan2_val_s = np.vstack([gan2_val_s, gan_losses_2_val])
 
         # Save the models
-        torch.save(generator.state_dict(), "/dbfs/ml/gan/data/hls/dpm_fl/evographnet/weights/generator_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
-        torch.save(discriminator.state_dict(), "/dbfs/ml/gan/data/hls/dpm_fl/evographnet/weights/discriminator_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
+        torch.save(generator.state_dict(), "/dbfs/ml/blogs/gan/dpm_xl/evographnet/weights/generator_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
+        torch.save(discriminator.state_dict(), "/dbfs/ml/blogs/gan/dpm_xl/evographnet/weights/discriminator_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
         torch.save(generator2.state_dict(),
-                   "/dbfs/ml/gan/data/hls/dpm_fl/evographnet/weights/generator2_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
+                   "/dbfs/ml/blogs/gan/dpm_xl/evographnet/weights/generator2_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
         torch.save(discriminator2.state_dict(),
-                   "/dbfs/ml/gan/data/hls/dpm_fl/evographnet//weights/discriminator2_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
+                   "/dbfs/ml/blogs/gan/dpm_xl/evographnet//weights/discriminator2_" + str(fold) + "_" + str(epoch) + "_" + str(opt.exp))
 
     del generator
     del discriminator
@@ -566,57 +566,57 @@ for fold in range(folds):
 # COMMAND ----------
 
 # Save losses
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/G_TrainLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/G_TrainLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gen_mae_losses_tr, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/G_ValLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/G_ValLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gen_mae_losses_val, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/D_TrainRealLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/D_TrainRealLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(disc_real_losses_tr, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/D_TrainFakeLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/D_TrainFakeLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(disc_fake_losses_tr, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/D_ValRealLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/D_ValRealLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(disc_real_losses_val, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/D_ValFakeLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/D_ValFakeLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(disc_fake_losses_val, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/G2_TrainLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/G2_TrainLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gen_mae_losses_tr2, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/G2_ValLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/G2_ValLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gen_mae_losses_val2, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/D2_TrainRealLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/D2_TrainRealLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(disc_real_losses_tr2, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/D2_TrainFakeLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/D2_TrainFakeLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(disc_fake_losses_tr2, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/D2_ValRealLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/D2_ValRealLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(disc_real_losses_val2, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/D2_ValFakeLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/D2_ValFakeLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(disc_fake_losses_val2, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/GenTotal_Train_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/GenTotal_Train_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gen_mae_losses_tr + gen_mae_losses_tr2, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/GenTotal_Val_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/GenTotal_Val_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gen_mae_losses_val + gen_mae_losses_val2, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/K1_TrainLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/K1_TrainLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(k1_train_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/K1_ValLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/K1_ValLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(k2_train_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/K2_TrainLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/K2_TrainLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(k1_val_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/K2_ValLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/K2_ValLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(k2_val_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/TP1_TrainLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/TP1_TrainLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(tp1_train_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/TP1_ValLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/TP1_ValLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(tp2_train_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/TP2_TrainLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/TP2_TrainLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(tp1_val_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/TP2_ValLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/TP2_ValLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(tp2_val_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/GAN1_TrainLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/GAN1_TrainLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gan1_train_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/GAN1_ValLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/GAN1_ValLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gan2_train_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/GAN2_TrainLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/GAN2_TrainLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gan1_val_s, f)
-with open("/dbfs/ml/gan/data/hls/dpm_fl/evographnet/losses/GAN2_ValLoss_exp_" + str(opt.exp), "wb") as f:
+with open("/dbfs/ml/blogs/gan/dpm_xl/evographnet/losses/GAN2_ValLoss_exp_" + str(opt.exp), "wb") as f:
     pickle.dump(gan2_val_s, f)
 
 
